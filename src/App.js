@@ -1,12 +1,6 @@
 //import logo from './logo.svg';
 import './App.css';
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import CircularProgress from '@mui/material/CircularProgress';
+import React, {useRef} from 'react'
 import { Upload } from "@aws-sdk/lib-storage";
 import { S3Client } from "@aws-sdk/client-s3";
 
@@ -44,29 +38,22 @@ function App() {
       </header>
       <body className="App-body">
       <p>
-      (Sources must be formatted manually!)
+          Upload your paper here:
         </p>
-        <p>
-        Select a .docx file:
-        </p>
-        <Button variant="contained" component="label">
-          <input type="file" onChange={upload}></input>
-        </Button>
+
+        <input type='file' id='fileInput' onChange={upload}></input>
         <br></br>
-        <p>
-        <Button variant="contained">Convert to MLA</Button>
-        </p>
-        <p>
-        <CircularProgress />
-        </p>
-        <p>
-        <Button variant="contained">Download Converted File</Button>
-        </p>
+        <button id='uploadButton'>Upload</button>
+        {/* 1. add upload function
+            2. read file from upload
+            3. change format of file to MLA
+            4. output MLA formatter file
+        */ }
       </body>
     </div>
   );
+
 }
 
+export default App
 
-
-export default App;
