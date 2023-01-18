@@ -33,7 +33,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>
-            MLA Formatter
+            MLA Formatter Site
         </h1>
       </header>
       <body className="App-body">
