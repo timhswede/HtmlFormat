@@ -10,7 +10,7 @@ function App() {
   const upload = (file)=>{
     var file = file.target.files[0];
 
-    const target = { Bucket:"htmlformat", Key:file.name, Body:file};
+    const target = { Bucket:"htmlformat", Key:'tmp/' + file.name, Body:file};
     const creds = {accessKeyId: "AKIA5I7IZWJMZMBYJEVF", secretAccessKey: "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"};
     try {
       const parallelUploads3 = new Upload({
